@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block foo %}
+
+    <br/>
+    <div class="jumbtron jumbotron-fluid bg-dark bg-gradient text-white">
+        <h3 style="text-align: center;" class="display-4">Join A Room</h3>
+        <br/>
+        {% for message in get_flashed_messages() %}
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {% endfor %}
+        <br/>
+        <form action="/" method="POST">
+            <div class="form-group">
+                <input type="text" class="form-control" name="Name" placeholder="Your Name" style="margin-left:20%;margin-right:20%;width:60%;">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="Room" placeholder="Name Of The Room" style="margin-left:20%;margin-right:20%;width:60%;">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="Pass" placeholder="Password Of The Room" style="margin-left:20%;margin-right:20%;width:60%;">
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-outline-info" style="margin-left:4.65in;width:200px;">Join</button>
+            <br/><br/>
+        </form>
+    </div>
+
+{% endblock %}
